@@ -1,32 +1,58 @@
 <?php
 class Livro{
 
-    // Primeiro adicionar as propriedades antes de fazer a classe
+    // Primeiro adicionar as propriedades antes de fazer as propriedades
     private string $titulo;
     private string $autor;
     private int $paginas = 0;
 
-    public function setTitulo(string $titulo) : void {
-        $this->titulo = $titulo;
+
+   // SET_TITULO
+
+   public function setTitulo(string $titulo): self
+   {
+       $this->titulo = $titulo;
+       
+       return $this;
     }
 
-    public function getTitulo() : string {
+    // GET_TITULO
+
+    public function getTitulo(): string
+    {
         return $this->titulo;
     }
-
-    public function setAutor(string $autor) : void {
-        $this->autor = $autor;
+    
+   // SET_AUTOR
+   
+   public function setAutor(string $autor): self
+   {
+       $this->autor = $autor;
+       
+       return $this;
     }
+   
 
-    public function getAutor() : string {
+    // GET_AUTOR
+
+    public function getAutor(): string
+    {
         return $this->autor;
     }
-
-    public function setPaginas(int $paginas) : void {
-        $this->paginas = $paginas;
+    
+    
+    // SET_PAGINAS
+   
+   public function setPaginas(int $paginas): self
+    {
+       $this->paginas = $paginas;
+       
+       return $this;
     }
 
-    public function getPaginas() : int {
+    // GET_PAGINAS
+    public function getPaginas(): int
+    {
         return $this->paginas;
     }
 }

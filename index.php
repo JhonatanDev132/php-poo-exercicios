@@ -31,5 +31,7 @@
     </p>
     </div>
 
+    <pre><?=var_dump($livro1)?></pre>
+
 </body>
 </html>
