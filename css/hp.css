@@ -1,0 +1,22 @@
+h1, h2, h3{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+p{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 15px;
+}
+
+div {
+    width: 65%;
+    background-color: cornflowerblue;
+    color: whitesmoke;
+    margin: auto;
+    padding: 10px;
+    border: solid black 2.5px;
+    box-shadow: darkgray 5px 10px 7px;
+}
+
+h3{
+    font-size: 30px;
+}
