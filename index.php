@@ -11,11 +11,13 @@
 
     <?php
         require_once "src/Livro.php";
+
+
         $livro1 = new Livro;
 
         $livro1->setTitulo("Harry Potter: E o Cálice de Fogo");
         $livro1->setAutor("J.K Rowling");
-        $livro1->setPaginas(636)
+        $livro1->setPaginas(636);
     ?>
 
     <h2>Livro que estou lendo atualmente:</h2>
