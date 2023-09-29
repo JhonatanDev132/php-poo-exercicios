@@ -1,25 +1,15 @@
 <?php
-require_once "src/Livro.php";
-    final class Tecnico extends Livro {
-      private $formato = array("digital", "formato");
+require_once "Livro.php";
+class Tecnico extends Livro {
+    private array $formato = ["digital", "fisico"];
 
-      /**
-       * Get the value of formato
-       */
-      public function getFormato() : array
-      {
-            return $this->formato;
-      }
-
-      /**
-       * Set the value of formato
-       */
-      public function setFormato(array $formato): void
-      {
-            $this->formato = $formato;
-
-      }
+    public function getFormato(): string {
+        return implode(", ", $this->formato);
     }
-    
 
-?>
+    public function setFormato(array $formato): self {
+        $this->formato = $formato;
+
+        return $this;
+    }
+}

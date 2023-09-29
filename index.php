@@ -3,37 +3,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Exercicio1_POO</title>
-    <link rel="stylesheet" href="css/hp.css">
+    <title>Exercício 02 (corrigido)</title>
 </head>
 <body>
-    <h1>Exercicio 1 | Utilizando POO no PHP</h1>
+    <h1>Exercício 02 (corrigido)</h1>
+    <hr>
+<?php
+// Livro Técnico
+require_once "src/Tecnico.php";
+$livroTecnico = new Tecnico;
+$livroTecnico->setTitulo("Desenvolvimento de Sistemas");
+$livroTecnico->setAutor("Fulano de Tal");
+$livroTecnico->setPaginas(250);
+$livroTecnico->setFormato(["digital"]);
+?>
+<h2>Dados (Técnico)</h2>
+<p>Nome: <?=$livroTecnico->getTitulo()?> </p>
+<p>Autor: <?=$livroTecnico->getAutor()?> </p>
+<p>Formato: <?=$livroTecnico->getFormato()?> </p>
 
-    <?php
-        require_once "src/Livro.php";
+<hr>
 
+<?php
+// Livro Didático
+require_once "src/Didatico.php";
+$livroDidatico = new Didatico;
+$livroDidatico->setTitulo("Literatura Moderna");
+$livroDidatico->setFormato(["digital", "fisico"]);
+$livroDidatico->setNivel(["médio", "superior"]);
+?>
+<h2>Dados (Didático)</h2>
+<p>Nome: <?=$livroDidatico->getTitulo()?> </p>
+<p>Formato: <?=$livroDidatico->getFormato()?> </p>
+<p>Nível: 
+    <?php foreach($livroDidatico->getNivel() as $nivel){
+        echo $nivel." ";
+    } ?> 
+</p>
 
-        $livro1 = new Livro;
+<hr>
 
-        $livro1->setTitulo("Harry Potter: E o Cálice de Fogo");
-        $livro1->setAutor("J.K Rowling");
-        $livro1->setPaginas(636);
-    ?>
-
-    <h2>Livro que estou lendo atualmente:</h2>
-
-    <div>
-    <h3><?=$livro1->getTitulo()?></h3>
-    <p style="font-size: 13px;"><i>Criado por <?=$livro1->getAutor()?></i></caption>
-
-    <p>Número de páginas: <?=$livro1->getPaginas()?></p>
-
-    <p>
-        Apesar de a escritora não possuir um bom histórico nas mídias a fora, nós temos que Harray potter foi o maior feito que ela consigou fazer entre suas obras fazendo ele ser o livro de bruxos mais famoso do mundo.
-    </p>
-    </div>
-
-    <pre><?=var_dump($livro1)?></pre>
+<?php
+// Livro Programação
+require_once "src/Programacao.php";
+$livroProgramacao = new Programacao;
+$livroProgramacao->setTitulo("PHP8");
+$livroProgramacao->setAutor("Beltrano");
+$livroProgramacao->setFormato(["digital"]);
+$livroProgramacao->setArea("Back-End");
+?>
+<h2>Dados (Programação)</h2>
+<p>Nome: <?=$livroProgramacao->getTitulo()?> </p>
+<p>Formato: <?=$livroProgramacao->getFormato()?> </p>
+<p>Área: <?=$livroProgramacao->getArea()?> </p>
 
 </body>
 </html>
